@@ -1,5 +1,5 @@
-const rows = 6;
-const columns = 6;
+const rows = 16;
+const columns = 16;
 
 // Get the grid container element
 const gridContainer = document.querySelector(".grid-container");
@@ -12,9 +12,11 @@ for (let row = 0; row < rows; row++) {
   for (let column = 0; column < columns; column++) {
     const cell = document.createElement("div");
     cell.className = "cell";
-    cell.innerText = `${row}, ${column}`;
+    //cell.innerText = `${row}, ${column}`;
     rowDiv.append(cell);
-    console.log(row);
-    console.log(cell);
+
+    cell.addEventListener("mouseover", (event) => {
+      cell.style.backgroundColor = "lightblue";
+    });
   }
 }
